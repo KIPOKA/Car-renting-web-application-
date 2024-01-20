@@ -5,6 +5,7 @@ body{
 }
 header{
   z-index: 10001 !important;
+  background-color: white;
 }
 .upperlink {
   @apply text-2xl font-semibold flex items-center space-x-3;
@@ -12,13 +13,13 @@ header{
 .topSection{
   min-height: 100vh;
   min-width: 100%;
-  margin-top: 6em;
+  margin-top: 6%;
   @apply w-full max-w-screen-2xl
          flex justify-between
-         lg:pl-12
-         lg:pr-12
-         pl-3 pr-3
-         bg-red-200
+         lg:pl-12 
+         pl-3 
+         mt-20
+        
 
 }
 .leftContainer{
@@ -27,12 +28,44 @@ header{
          flex-col
          pl-2
 }
+.blob{
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  right: -5em;
+  top: -9em;
+  z-index: -1;
+  transform: rotate(-30deg);
+  
+}
+.image{
+  width: 100%;
+  height: auto;
+  max-height: max-content;
+}
+.image .car{
+  width: 100%;
+  height: auto;
+  max-height: max-content;
+}
+.car{
+  width: auto;
+  height: 10em;
+  right: -6em;
+  position:absolute;
+
+}
+.car img {
+  width: auto;
+  height: 100%;
+  max-width: fit-content;
+}
 
 .textContent{
   @apply font-bold
          text-2xl 
-         xl:text-6xl
-         sm:text-3xl
+         xl:text-5xl
+         sm:text-2xl
          md:text-5xl
          lg:font-black
          md:font-extrabold
@@ -43,18 +76,21 @@ header{
          xl:leading-relaxed
 }
 .description{
-    @apply text-xs lg:text-sm
+    @apply text-xl lg:text-sm
            xl:text-lg 
            sm:max-h-full
            overflow-hidden
            max-h-12
-           text-gray-800
+           w-3/4
+          
 }
 
 .rightContainer{
   @apply w-1/2
           flex flex-col
-          relative mt-20
+          relative
+          left-0
+          mt-0
           
 }
 .item-content{

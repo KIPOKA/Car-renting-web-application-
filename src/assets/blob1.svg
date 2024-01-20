@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1000 900" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="c" gradientTransform="rotate(45 .5 .5)">
+            <stop offset="0%" stop-color="#FFE53B" />
+            <stop offset="100%" stop-color="#FF2525" />
+        </linearGradient>
+        <clipPath id="b">
+            <path fill="currentColor"
+                d="M845 642q-6 142-142.5 186.5t-293 71.5Q253 927 150 796T72.5 509.5Q98 354 210.5 274t240-147.5q127.5-67.5 265 5T852 352q-1 148-7 290Z" />
+        </clipPath>
+        <filter id="a" x="-50vw" y="-50vh" width="100vw" height="100vh">
+            <feFlood flood-color="#fff" result="neutral-gray" />
+            <feTurbulence type="fractalNoise" baseFrequency="2.5" numOctaves="100"
+                stitchTiles="stitch" result="noise" />
+            <feColorMatrix in="noise" type="saturate" values="0" result="destaturatedNoise" />
+            <feComponentTransfer in="desaturatedNoise" result="theNoise">
+                <feFuncA type="table" tableValues="0 0 0.25 0" />
+            </feComponentTransfer>
+            <feBlend in="SourceGraphic" in2="theNoise" mode="soft-light" result="noisy-image" />
+        </filter>
+    </defs>
+    <g filter="url(#a)" clip-path="url(#b)">
+        <path fill="url(#c)"
+            d="M845 642q-6 100-142.5 146.5t-293 71.5Q253 927 150 796T72.5 509.5Q98 354 210.5 274t240-147.5q127.5-67.5 265 5T852 352q-1 148-7 290Z" />
+    </g>
+</svg>

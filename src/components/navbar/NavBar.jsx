@@ -41,7 +41,7 @@ const Navbar = ()=> {
                 <div className='item-content'>
                     <a href="/" className='upperlink'> 
                     <img src={Logo} alt="" className='w-10 inline-block items-center' />
-                    <span className='text-[#263238] text-2xl'>Bliss Car.</span></a>
+                    <span className='text-black-900 text-2xl'>Bliss Car.</span></a>
                   
 
                    <div className='space-x-12 hidden lg:flex items-center '>
