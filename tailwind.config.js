@@ -16,7 +16,7 @@ export default {
         'secondary':'#3CD303',
         'tertiary':'#F0F0F0',
         'silver':'#E7E4E4',
-        'greenPrimary': '#2ECC71',
+        'greenPrimary': '#c',
       }, 
       
     },

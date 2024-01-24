@@ -1,161 +1,397 @@
-
+/* Import the Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
-body{
-  font-family: 'Inter', sans-serif;
+
+/* Apply the Inter font to the entire body */
+body {
+    font-family: 'Inter', sans-serif;
 }
-header{
-  z-index: 10001 !important;
-  background-color: white;
+
+/* Header styling with high z-index */
+header {
+    z-index: 10001 !important;
 }
+
+/* Styles for upperlink */
 .upperlink {
-  @apply text-2xl font-semibold flex items-center space-x-3;
+    @apply text-2xl 
+            font-semibold 
+            flex 
+            items-center 
+            space-x-3;
 }
-.topSection{
-  min-height: 100vh;
-  min-width: 100%;
-  margin-top: 6%;
-  @apply w-full max-w-screen-2xl
-         flex justify-between
-         lg:pl-12 
-         pl-3 
-         mt-20
-        
 
+/* Top section styling */
+.topSection {
+    min-height: 80vh;
+    min-width: 100%;
+    margin-top: 6%;
+    @apply w-full 
+            max-w-screen-2xl
+            flex 
+            justify-between
+            lg:pl-12 
+            pl-3 
+            mt-20;
 }
-.leftContainer{
-  @apply w-1/2
-         flex
-         flex-col
-         pl-2
-}
-.blob{
-  width: 10em;
-  height: 10em;
-  position: absolute;
-  right: -5em;
-  top: -9em;
-  z-index: -1;
-  transform: rotate(-30deg);
-  
-}
-.image{
-  width: 100%;
-  height: auto;
-  max-height: max-content;
-}
-.image .car{
-  width: 100%;
-  height: auto;
-  max-height: max-content;
-}
-.car{
-  width: auto;
-  height: 10em;
-  right: -6em;
-  position:absolute;
 
+/* Styles for left container */
+.leftContainer {
+    @apply w-1/2
+           flex
+           flex-col
+           pl-2;
 }
+
+/* Blob styling for decoration */
+.blob {
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    right: -5em;
+    top: -9em;
+    z-index: -1;
+    transform: rotate(-30deg);
+}
+
+/* Image styles */
+.image {
+    width: 100%;
+    height: auto;
+    max-height: max-content;
+}
+
+/* Car image styles */
+.image .car {
+    width: 100%;
+    height: auto;
+    max-height: max-content;
+}
+
+/* Car container styles */
+.car {
+    width: auto;
+    height: 10em;
+    right: -6em;
+    position: absolute;
+}
+
+/* Car image styles */
 .car img {
-  width: auto;
-  height: 100%;
-  max-width: fit-content;
+    width: auto;
+    height: 100%;
+    max-width: fit-content;
 }
 
-.textContent{
-  @apply font-bold
-         text-2xl 
-         xl:text-5xl
-         sm:text-2xl
-         md:text-5xl
-         lg:font-black
-         md:font-extrabold
-         sm:font-extrabold
-         text-black
-         mb-4 sm:leading-snug
-         lg:leading-normal
-         xl:leading-relaxed
+/* Text content styling */
+.textContent {
+    @apply font-bold
+            text-2xl 
+            xl:text-5xl
+            sm:text-3xl
+            2xl:text-6xl
+            md:text-5xl
+            lg:font-black
+            md:font-extrabold
+            sm:font-extrabold
+            text-black
+            mb-4 
+            sm:leading-snug
+            lg:leading-normal
+            xl:leading-relaxed;
 }
-.description{
+
+/* Description styling */
+.description {
     @apply text-xl lg:text-sm
            xl:text-lg 
            sm:max-h-full
            overflow-hidden
            max-h-12
-           w-3/4
-          
+           w-3/4;
 }
 
-.rightContainer{
-  @apply w-1/2
-          flex flex-col
-          relative
-          left-0
-          mt-0
-          
+/* Styles for right container */
+.rightContainer {
+    @apply w-1/2
+           flex flex-col
+           relative
+           left-0
+           mt-0;
 }
-.item-content{
-  @apply flex justify-between items-center text-base gap-8
-}
-.linked{
-  @apply block 
-         md:text-base
-       text-gray900
-       hover:text-green-900 
-       first:font-medium 
-       text-3xl
-}
-.btn-primary{
-  @apply  py-3 bg-other
-   text-white transition-all 
-   px-12 duration-300 
-   rounded hover:-translate-y-4 
-   hover:bg-brandPrimary 
-  ml-11
- 
 
+/* Styles for item content */
+.item-content {
+    @apply flex 
+            justify-between 
+            items-center 
+            text-base 
+            gap-8;
 }
-.btn-login{
-  @apply py-3 
-          px-8 bg-brandPrimary
-          text-white  
+
+/* Linked styles */
+.linked {
+    @apply block 
+           md:text-base
+           text-gray900
+           hover:text-green-900 
+           first:font-medium 
+           text-3xl;
+}
+
+/* Primary button styles */
+.btn-primary {
+    @apply py-3 bg-other
+          text-white 
           transition-all 
-          duration-300 rounded 
-          hover:bg-other
-          mb-4
+          px-12 
+          duration-300 
+          rounded-md
+          hover:-translate-y-4 
+          hover:bg-brandPrimary 
+          ml-11
+          sm:text-lg;
 }
 
+/* Tertiary button styles */
+.btn-tertiary {
+    @apply py-3 bg-other
+          text-white 
+          transition-all 
+          px-12 
+          duration-300 
+          rounded-md 
+          hover:bg-brandPrimary 
+          ml-11
+          sm:text-lg;
+}
+
+/* Secondary button styles */
+.btn-secondary {
+    @apply ml-11
+            text-black
+            rounded-md 
+            hover:bg-other
+            hover:text-white 
+            py-3
+            px-6
+            sm:text-lg 
+            border
+            transition-all 
+            duration-300 
+            hover:-translate-y-4;
+}
+
+/* Login button styles */
+.btn-login {
+    @apply py-3 
+            px-8 bg-brandPrimary
+            text-white  
+            transition-all 
+            duration-300 rounded 
+            hover:bg-other
+            mb-4;
+}
+
+/* Rounded corner container styles */
 .rounded-corner {
-  @apply px-4 
-         lg:px-14 
-         max-w-screen-2xl 
-         mx-auto bg-other py-16 
-         rounded-tl-full 
-         rounded-br-full;
+    @apply px-4 
+           lg:px-14 
+           max-w-screen-2xl 
+           mx-auto 
+           bg-other 
+           py-16 
+           rounded-tl-full 
+           rounded-br-full;
 } 
 
+/* Rounded container styles */
 .rounded-c {
-  @apply  bg-white py-16 
-          rounded-tl-full 
-          rounded-br-full;
+    @apply  bg-white py-16 
+            rounded-tl-full 
+            rounded-br-full;
 }
-.text-link{
-  @apply inline-flex
-          items-center rounded-lg 
-          bg-brandPrimary px-4 py-2 
-          text-center text-sm 
-          font-medium text-white 
-          hover:bg-cyan-800 
-          focus:outline-none 
-          focus:ring-4 focus:ring-cyan-300 
-          dark:bg-cyan-600 
-          dark:hover:bg-cyan-700 
-          dark:focus:ring-cyan-800
-          justify-between
+
+/* Text link styles */
+.text-link {
+    @apply inline-flex
+            items-center 
+            rounded-lg 
+            bg-brandPrimary 
+            px-4 
+            py-2 
+            text-center 
+            text-sm 
+            font-medium 
+            text-white 
+            hover:bg-cyan-800 
+            focus:outline-none 
+            focus:ring-4 
+            focus:ring-cyan-300 
+            dark:bg-cyan-600 
+            dark:hover:bg-cyan-700 
+            dark:focus:ring-cyan-800
+            justify-between;
 }
-.card{
- @apply mt-14 grid lg:grid-cols-3 
-        md:grid-cols-2 
-        grid-cols-1 
-        md:w-11/12 
-        mx-auto gap-12
+
+/* Card styling */
+.card {
+    @apply mt-14 grid lg:grid-cols-3 
+           md:grid-cols-2 
+           grid-cols-1 
+           md:w-11/12 
+           mx-auto gap-12;
+}
+
+/* Card container styles */
+.cardContainer {
+    min-height: 4.3em;
+    box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
+    max-width: 85%;
+
+    @apply flex   
+          items-center
+          rounded-md
+          bg-white
+          mt-10
+          ml-10
+          pt-1
+          pb-1
+          pl-2 
+          pr-2
+          md:pt-2
+          md:pb-2 
+          md:pl-6
+          md:pr-9;
+} 
+
+/* Separator styles */
+.seperator {
+    width: 2px;
+    height: 45%;
+    @apply bg-other 
+            mr-2 
+            ml-2  
+            md:mr-5 
+            md:ml-5;
+} 
+
+/* Calendar icon styles */
+.calendar {
+    @apply text-red-500 
+            fill-current 
+            text-xs 
+            md:text-base 
+            mr-1 
+            md:mr-3;
+} 
+
+/* Text styles */
+.text {
+    @apply text-gray-600 
+            text-xs
+            md:text-sm
+            cursor-pointer;
+}
+
+/* Up and Down arrow styles */
+.upanddown {
+    @apply text-gray-700
+            fill-current 
+            md:text-base
+            text-sm
+            ml-1;
+}
+
+/* Booking container styles */
+.booking-container {
+    @apply w-full
+           flex 
+           items-center
+           pt-3
+           pb-3 
+           lg:pt-6 
+           lg:pb-6
+           justify-center;
+}
+
+/* Booking text styles */
+.booking-text {
+    @apply text-2xl 
+            lg:text-4xl
+            text-black
+            font-extrabold;
+}
+
+/* Steps container styles */
+.steps-container {
+    @apply flex 
+            justify-evenly 
+            flex-wrap 
+            mt-7 
+            lg:mt-16;
+}
+
+/* Step container styles */
+.step-container {
+    @apply flex 
+            flex-col
+            w-16 
+            md:w-96 
+            items-center
+            transition-colors
+            hover:text-red-500;      
+}
+
+/* Step styles */
+.step {
+    @apply flex 
+            rounded-md
+            items-center 
+            justify-center 
+            p-6;      
+}
+
+/* Step title styles */
+.step-title {
+    @apply text-black
+            text-xl
+            font-semibold
+            mt-4;
+}
+
+/* Step description styles */
+.step-description {
+    @apply w-10/12
+          text-lg
+          md:text-lg
+          text-center 
+          text-gray-600
+          mt-4;
+}
+
+/* Step icon styles */
+.step-icon {
+    @apply text-3xl
+           text-green-600;
+}
+
+/* Card item styles */
+.card-item {
+    @apply px-4 py-8 
+           text-center 
+           md:w-[300px] 
+           mx-auto 
+           md:h-80 
+           rounded-md 
+           shadow
+           cursor-pointer 
+           hover:-translate-y-5 
+           hover:border-b-4
+           hover:border-other 
+           transition-all 
+           duration-300 
+           flex 
+           items-center 
+           justify-center 
+           h-full;
 }

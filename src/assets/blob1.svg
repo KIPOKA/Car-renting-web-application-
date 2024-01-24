@@ -1,11 +1,11 @@
 <svg viewBox="0 0 1000 900" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="c" gradientTransform="rotate(45 .5 .5)">
-            <stop offset="0%" stop-color="#FFE53B" />
-            <stop offset="100%" stop-color="#FF2525" />
+            <stop offset="0%" stop-color="#3CD303" />
+            <stop offset="100%" stop-color="##3CD303" />
         </linearGradient>
         <clipPath id="b">
-            <path fill="currentColor"
+            <path fill="#3CD303"
                 d="M845 642q-6 142-142.5 186.5t-293 71.5Q253 927 150 796T72.5 509.5Q98 354 210.5 274t240-147.5q127.5-67.5 265 5T852 352q-1 148-7 290Z" />
         </clipPath>
         <filter id="a" x="-50vw" y="-50vh" width="100vw" height="100vh">

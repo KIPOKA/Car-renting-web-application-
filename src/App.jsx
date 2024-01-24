@@ -1,7 +1,7 @@
 import React from 'react' 
 import './App.css'
 import HomePage from './containers/HomePage'
-import NavBar from './components/navbar/NavBar'
+import ContentPage from './components/ContentPage/ContentPage'
 
 function App() {
   
@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <div >
-        <NavBar/>
         <HomePage/>
+        <ContentPage/>
       </div>
     </>
   )
