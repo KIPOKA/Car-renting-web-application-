@@ -18,6 +18,46 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const handleRegisterSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate form data
+    if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/)) {
+      setError(
+        "Password must have at least 8 characters, an uppercase letter, a lowercase letter, and a special character."
+      );
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    setError(""); // Clear error
+
+    try {
+      const response = await axios.post("/register", {
+        username,
+        password,
+        name,
+        surname,
+      });
+
+      // If registration is successful, show success message
+      if (response.status === 200) {
+        alert("Registration successful!");
+        // You can also close the modal here and clear the form fields
+        setIsRegisterModalOpen(false);
+      }
+    } catch (error) {
+      if (error.response) {
+        // Show error message if there's a server-side issue
+        setError(error.response.data.error);
+      } else {
+        setError("An error occurred during registration.");
+      }
+    }
+  };
 
   // Toggle modals (ensuring only one modal is open at a time)
   const toggleSignInModal = () => {
@@ -222,24 +262,7 @@ const Navbar = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg w-96 shadow-lg relative">
             <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                // Validation logic here
-                if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/)) {
-                  setError(
-                    "Password must have at least 8 characters, an uppercase letter, a lowercase letter, and a special character."
-                  );
-                  return;
-                }
-                if (password !== confirmPassword) {
-                  setError("Passwords do not match.");
-                  return;
-                }
-                setError(""); // Clear error
-                alert("Registration successful!");
-              }}
-            >
+            <form onSubmit={handleRegisterSubmit}>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Name</label>
                 <input
