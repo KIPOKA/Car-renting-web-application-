@@ -34,7 +34,8 @@ const Home = () => {
           {/* Header Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800">
-              Welcome to <span className="text-blue-500">FastRide Rentals</span>
+              Welcome to{" "}
+              <span className="text-blue-500">Bliss Rental Cars</span>
             </h1>
             <p className="text-gray-600 mt-4">
               Whether you're planning a road trip, need a ride for a business
@@ -126,64 +127,6 @@ const Home = () => {
               >
                 Search
               </button>
-            </div>
-          </div>
-
-          {/* Key Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-              <span className="text-blue-500 text-4xl">🚗</span>
-              <h3 className="font-semibold text-gray-700 mt-2">
-                Wide Selection
-              </h3>
-              <p className="text-gray-600 text-center mt-1">
-                A wide range of cars to meet your needs.
-              </p>
-            </div>
-            <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-              <span className="text-blue-500 text-4xl">🌍</span>
-              <h3 className="font-semibold text-gray-700 mt-2">
-                Convenient Locations
-              </h3>
-              <p className="text-gray-600 text-center mt-1">
-                Pickup and return at locations across the country.
-              </p>
-            </div>
-            <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-              <span className="text-blue-500 text-4xl">💰</span>
-              <h3 className="font-semibold text-gray-700 mt-2">
-                Affordable Rates
-              </h3>
-              <p className="text-gray-600 text-center mt-1">
-                Enjoy competitive pricing and great deals.
-              </p>
-            </div>
-            <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-              <span className="text-blue-500 text-4xl">📅</span>
-              <h3 className="font-semibold text-gray-700 mt-2">
-                Flexible Bookings
-              </h3>
-              <p className="text-gray-600 text-center mt-1">
-                Plan your trip with flexible dates and times.
-              </p>
-            </div>
-            <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-              <span className="text-blue-500 text-4xl">🔧</span>
-              <h3 className="font-semibold text-gray-700 mt-2">
-                Reliable Cars
-              </h3>
-              <p className="text-gray-600 text-center mt-1">
-                Well-maintained vehicles for a smooth ride.
-              </p>
-            </div>
-            <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-              <span className="text-blue-500 text-4xl">⭐</span>
-              <h3 className="font-semibold text-gray-700 mt-2">
-                Excellent Support
-              </h3>
-              <p className="text-gray-600 text-center mt-1">
-                24/7 customer support to assist you anytime.
-              </p>
             </div>
           </div>
         </div>

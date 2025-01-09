@@ -16,7 +16,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
       <div
         className={`${
@@ -87,12 +87,6 @@ const Sidebar = () => {
             </li>
           </ul>
         </nav>
-      </div>
-
-      {/* Main Content */}
-      <div className="flex-grow p-6 bg-gray-100">
-        <h1 className="text-2xl font-bold">Welcome to the Dashboard</h1>
-        <p className="mt-4 text-gray-600">This is the main content area.</p>
       </div>
     </div>
   );
