@@ -7,6 +7,7 @@ import {
   FaCog,
   FaUser,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -42,53 +43,53 @@ const Sidebar = () => {
           {/* Top Menu */}
           <ul className="flex flex-col gap-4">
             <li className="w-full">
-              <a
-                href="#rent-car"
+              <Link
+                to="/rent-car"
                 className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaCar />
                 {isOpen && <span>Rent Car</span>}
-              </a>
+              </Link>
             </li>
             <li className="w-full">
-              <a
-                href="#add-new-car"
+              <Link
+                to="/add-new-car"
                 className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaPlus />
                 {isOpen && <span>Add New Car</span>}
-              </a>
+              </Link>
             </li>
             <li className="w-full">
-              <a
-                href="#history-rides"
+              <Link
+                to="/history-rides"
                 className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaHistory />
                 {isOpen && <span>History Rides</span>}
-              </a>
+              </Link>
             </li>
             <li className="w-full">
-              <a
-                href="#payment"
+              <Link
+                to="/payment"
                 className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaMoneyBill />
                 {isOpen && <span>Payment</span>}
-              </a>
+              </Link>
             </li>
           </ul>
 
           {/* Bottom Menu */}
           <ul className="flex flex-col gap-4 mb-4">
             <li className="w-full">
-              <a
-                href="#settings"
+              <Link
+                to="/settings"
                 className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaCog />
                 {isOpen && <span>Settings</span>}
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
