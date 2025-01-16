@@ -38,7 +38,8 @@ const Sidebar = () => {
         </div>
 
         {/* Menu Items */}
-        <nav className="mt-8 w-full">
+        <nav className="mt-8 flex flex-1 flex-col justify-between w-full">
+          {/* Top Menu */}
           <ul className="flex flex-col gap-4">
             <li className="w-full">
               <a
@@ -76,6 +77,10 @@ const Sidebar = () => {
                 {isOpen && <span>Payment</span>}
               </a>
             </li>
+          </ul>
+
+          {/* Bottom Menu */}
+          <ul className="flex flex-col gap-4 mb-4">
             <li className="w-full">
               <a
                 href="#settings"
