@@ -21,7 +21,7 @@ const Sidebar = () => {
       <div
         className={`${
           isOpen ? "w-64" : "w-16"
-        } h-screen bg-blue-600 text-white flex flex-col items-center transition-all duration-300`}
+        } h-screen bg-blue-500 text-white flex flex-col items-center transition-all duration-300`}
       >
         {/* Toggle Button */}
         <button
