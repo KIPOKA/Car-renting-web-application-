@@ -26,7 +26,7 @@ const Sidebar = () => {
         {/* Toggle Button */}
         <button
           onClick={toggleSidebar}
-          className="mt-4 text-xl text-white focus:outline-none hover:bg-blue-700 rounded-full p-2"
+          className="mt-4 text-xl text-white focus:outline-none hover:bg-blue-600 rounded-full p-2"
         >
           {isOpen ? "<" : ">"}
         </button>
@@ -43,7 +43,7 @@ const Sidebar = () => {
             <li className="w-full">
               <a
                 href="#rent-car"
-                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-700 rounded-lg"
+                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaCar />
                 {isOpen && <span>Rent Car</span>}
