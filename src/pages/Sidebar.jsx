@@ -52,7 +52,7 @@ const Sidebar = () => {
             <li className="w-full">
               <a
                 href="#add-new-car"
-                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-700 rounded-lg"
+                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaPlus />
                 {isOpen && <span>Add New Car</span>}
@@ -61,7 +61,7 @@ const Sidebar = () => {
             <li className="w-full">
               <a
                 href="#history-rides"
-                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-700 rounded-lg"
+                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaHistory />
                 {isOpen && <span>History Rides</span>}
@@ -70,7 +70,7 @@ const Sidebar = () => {
             <li className="w-full">
               <a
                 href="#payment"
-                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-700 rounded-lg"
+                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaMoneyBill />
                 {isOpen && <span>Payment</span>}
@@ -79,7 +79,7 @@ const Sidebar = () => {
             <li className="w-full">
               <a
                 href="#settings"
-                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-700 rounded-lg"
+                className="flex items-center gap-4 px-4 py-2 hover:bg-blue-600 rounded-lg"
               >
                 <FaCog />
                 {isOpen && <span>Settings</span>}
