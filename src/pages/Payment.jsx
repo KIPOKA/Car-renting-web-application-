@@ -45,7 +45,7 @@ const Payment = () => {
 
   return (
     <div className="p-6 max-w-lg mx-auto bg-white rounded-md shadow-md flex flex-row w-full">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Payment</h1>
+      <h1 className="text-2xl font-bold text-gray-700 mb-6">Payment</h1>
 
       {/* Current Cards */}
       <div className="mb-6">
