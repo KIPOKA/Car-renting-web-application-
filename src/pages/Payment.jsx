@@ -60,7 +60,7 @@ const Payment = () => {
                 className="p-4 border border-gray-300 rounded-md flex justify-between items-center"
               >
                 <div>
-                  <p className="text-gray-800 font-medium">{card.cardHolder}</p>
+                  <p className="text-gray-700 font-medium">{card.cardHolder}</p>
                   <p className="text-gray-600">{card.cardNumber}</p>
                   <p className="text-gray-500 text-sm">
                     Expires: {card.expirationDate}
