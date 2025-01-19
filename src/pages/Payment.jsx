@@ -122,7 +122,7 @@ const Payment = () => {
 
           {/* Expiration Date */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-gray-600 font-medium mb-2">
               Expiration Date
             </label>
             <input
@@ -137,7 +137,7 @@ const Payment = () => {
 
           {/* CVV */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2">CVV</label>
+            <label className="block text-gray-600 font-medium mb-2">CVV</label>
             <input
               type="password"
               name="cvv"
