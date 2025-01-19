@@ -86,13 +86,13 @@ const Payment = () => {
 
       {/* Add New Card */}
       <div>
-        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        <h2 className="text-xl font-semibold text-gray-600 mb-4">
           Add New Card
         </h2>
         <form onSubmit={handleAddCard}>
           {/* Cardholder Name */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-gray-600 font-medium mb-2">
               Cardholder Name
             </label>
             <input
