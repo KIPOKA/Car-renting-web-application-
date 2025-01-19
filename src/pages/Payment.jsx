@@ -107,7 +107,7 @@ const Payment = () => {
 
           {/* Card Number */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-gray-600 font-medium mb-2">
               Card Number
             </label>
             <input
