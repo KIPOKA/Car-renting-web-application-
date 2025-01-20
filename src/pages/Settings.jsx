@@ -30,7 +30,7 @@ const Settings = () => {
       <form onSubmit={handleSubmit}>
         {/* Username */}
         <div className="mb-4">
-          <label className="block text-gray-600 font-medium mb-2">
+          <label className="block text-gray-500 font-medium mb-2">
             Username
           </label>
           <input
@@ -45,7 +45,7 @@ const Settings = () => {
 
         {/* Email */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Email</label>
+          <label className="block text-gray-600 font-medium mb-2">Email</label>
           <input
             type="email"
             name="email"
