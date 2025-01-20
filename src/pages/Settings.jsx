@@ -66,7 +66,7 @@ const Settings = () => {
             name="password"
             value={settings.password}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter a new password"
           />
         </div>
@@ -86,7 +86,7 @@ const Settings = () => {
 
         {/* Theme */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Theme</label>
+          <label className="block text-gray-600 font-medium mb-2">Theme</label>
           <select
             name="theme"
             value={settings.theme}
