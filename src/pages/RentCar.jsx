@@ -98,7 +98,7 @@ const RentCar = () => {
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mb-6">
                 <label
                   htmlFor="returnDate"
                   className="block text-gray-600 font-medium mb-1"
