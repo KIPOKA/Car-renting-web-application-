@@ -110,7 +110,7 @@ const RentCar = () => {
                   id="returnDate"
                   value={returnDate}
                   onChange={(e) => setReturnDate(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
 
