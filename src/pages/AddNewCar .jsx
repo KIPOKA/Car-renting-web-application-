@@ -79,7 +79,7 @@ const AddNewCar = () => {
             name="price"
             value={carDetails.price}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md"
+            className="w-full px-3 py-2 border rounded-lg"
             placeholder="Enter price in USD"
             required
           />
