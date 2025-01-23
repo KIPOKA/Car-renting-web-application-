@@ -26,7 +26,7 @@ const AddNewCar = () => {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-md shadow-md">
+    <div className="p-6 max-w-lg mx-auto bg-white rounded-md shadow-md mt-8">
       <h1 className="text-2xl font-bold text-gray-800 mb-4">Add New Car</h1>
       <form onSubmit={handleSubmit}>
         {/* Car Make */}
