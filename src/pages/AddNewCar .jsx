@@ -94,7 +94,7 @@ const AddNewCar = () => {
             name="condition"
             value={carDetails.condition}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md"
+            className="w-full px-3 py-2 border rounded-lg"
           >
             <option value="New">New</option>
             <option value="Used">Used</option>
