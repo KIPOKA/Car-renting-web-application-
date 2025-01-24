@@ -1,4 +1,4 @@
-// Version 3 (Added a reset button and changed placeholder text)
+// Version 4 (Added comments and a different heading style)
 import React, { useState } from "react";
 
 const AddNewCar = () => {
@@ -25,47 +25,31 @@ const AddNewCar = () => {
     console.log("Car details submitted:", carDetails);
   };
 
-  const handleReset = () => {
-    setCarDetails({
-      make: "",
-      model: "",
-      year: "",
-      price: "",
-      condition: "New",
-      image: null,
-    });
-  };
-
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-md shadow-md mt-8">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">
-        Car Information Form
+    <div className="p-6 max-w-lg mx-auto bg-gray-100 rounded-md shadow-md mt-8">
+      {/* Main Heading */}
+      <h1 className="text-3xl font-semibold text-gray-900 mb-4 text-center">
+        Add New Vehicle
       </h1>
       <form onSubmit={handleSubmit}>
+        {/* Input for Car Make */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Make</label>
+          <label className="block text-gray-600 font-medium mb-2">Make</label>
           <input
             type="text"
             name="make"
             value={carDetails.make}
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-md"
-            placeholder="Car Make"
+            placeholder="Enter car make"
             required
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          className="w-full bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600"
         >
-          Submit
-        </button>
-        <button
-          type="button"
-          onClick={handleReset}
-          className="w-full mt-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
-        >
-          Reset
+          Add Car
         </button>
       </form>
     </div>
