@@ -1,4 +1,4 @@
-// Version 4 (Added comments and a different heading style)
+// Version 5 (Changed form alignment and button hover effect)
 import React, { useState } from "react";
 
 const AddNewCar = () => {
@@ -26,30 +26,28 @@ const AddNewCar = () => {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-gray-100 rounded-md shadow-md mt-8">
-      {/* Main Heading */}
-      <h1 className="text-3xl font-semibold text-gray-900 mb-4 text-center">
-        Add New Vehicle
+    <div className="p-8 max-w-md mx-auto bg-white rounded-lg shadow-md mt-10">
+      <h1 className="text-xl font-bold text-gray-800 mb-6 text-center">
+        Add Car Details
       </h1>
-      <form onSubmit={handleSubmit}>
-        {/* Input for Car Make */}
-        <div className="mb-4">
-          <label className="block text-gray-600 font-medium mb-2">Make</label>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-gray-700 font-medium mb-2">Make</label>
           <input
             type="text"
             name="make"
             value={carDetails.make}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md"
-            placeholder="Enter car make"
+            className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300"
+            placeholder="Make of the car"
             required
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600"
+          className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
         >
-          Add Car
+          Submit Details
         </button>
       </form>
     </div>
