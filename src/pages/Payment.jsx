@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Payment = () => {
-  // Mock data for existing cards
   const [currentCards, setCurrentCards] = useState([
     {
       id: 1,
@@ -31,7 +30,6 @@ const Payment = () => {
 
   const handleAddCard = (e) => {
     e.preventDefault();
-    // Add new card to the list (mock implementation)
     const newCardFormatted = {
       id: currentCards.length + 1,
       cardHolder: newCard.cardHolder,
@@ -40,14 +38,12 @@ const Payment = () => {
     };
     setCurrentCards([...currentCards, newCardFormatted]);
     setNewCard({ cardHolder: "", cardNumber: "", expirationDate: "", cvv: "" });
-    console.log("New card added:", newCardFormatted);
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-md shadow-md flex flex-row w-full">
+    <div className="p-6 max-w-lg mx-auto bg-white rounded-md shadow-md">
       <h1 className="text-2xl font-bold text-gray-700 mb-6">Payment</h1>
 
-      {/* Current Cards */}
       <div className="mb-6">
         <h2 className="text-xl font-semibold text-gray-700 mb-4">
           Current Cards
@@ -84,13 +80,11 @@ const Payment = () => {
         )}
       </div>
 
-      {/* Add New Card */}
       <div>
         <h2 className="text-xl font-semibold text-gray-600 mb-4">
           Add New Card
         </h2>
         <form onSubmit={handleAddCard}>
-          {/* Cardholder Name */}
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">
               Cardholder Name
@@ -104,8 +98,6 @@ const Payment = () => {
               placeholder="Enter cardholder name"
             />
           </div>
-
-          {/* Card Number */}
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">
               Card Number
@@ -119,8 +111,6 @@ const Payment = () => {
               placeholder="Enter card number"
             />
           </div>
-
-          {/* Expiration Date */}
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">
               Expiration Date
@@ -134,8 +124,6 @@ const Payment = () => {
               placeholder="MM/YY"
             />
           </div>
-
-          {/* CVV */}
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">CVV</label>
             <input
@@ -147,8 +135,6 @@ const Payment = () => {
               placeholder="Enter CVV"
             />
           </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
