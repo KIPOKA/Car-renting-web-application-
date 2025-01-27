@@ -7,12 +7,14 @@ const Payment = () => {
       cardHolder: "John Doe",
       cardNumber: "**** **** **** 1234",
       expirationDate: "12/24",
+      cardType: "Visa",
     },
     {
       id: 2,
       cardHolder: "Jane Smith",
       cardNumber: "**** **** **** 5678",
       expirationDate: "06/25",
+      cardType: "MasterCard",
     },
   ]);
 
@@ -24,6 +26,16 @@ const Payment = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
+  const detectCardType = (number) => {
+    const visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+    const masterCard = /^5[1-5][0-9]{14}$/;
+
+    if (visa.test(number)) return "Visa";
+    if (masterCard.test(number)) return "MasterCard";
+    return "Unknown";
+  };
 
   const validateCard = () => {
     const errors = {};
@@ -32,6 +44,8 @@ const Payment = () => {
     }
     if (!/^\d{16}$/.test(newCard.cardNumber)) {
       errors.cardNumber = "Card number must be 16 digits.";
+    } else if (detectCardType(newCard.cardNumber) === "Unknown") {
+      errors.cardNumber = "Unsupported card type.";
     }
     if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(newCard.expirationDate)) {
       errors.expirationDate = "Expiration date must be in MM/YY format.";
@@ -61,6 +75,7 @@ const Payment = () => {
       cardHolder: newCard.cardHolder,
       cardNumber: `**** **** **** ${newCard.cardNumber.slice(-4)}`,
       expirationDate: newCard.expirationDate,
+      cardType: detectCardType(newCard.cardNumber),
     };
     setCurrentCards([...currentCards, newCardFormatted]);
     setNewCard({ cardHolder: "", cardNumber: "", expirationDate: "", cvv: "" });
@@ -85,7 +100,7 @@ const Payment = () => {
                   <p className="text-gray-700 font-medium">{card.cardHolder}</p>
                   <p className="text-gray-700">{card.cardNumber}</p>
                   <p className="text-gray-400 text-sm">
-                    Expires: {card.expirationDate}
+                    {card.cardType} | Expires: {card.expirationDate}
                   </p>
                 </div>
                 <button
@@ -134,6 +149,18 @@ const Payment = () => {
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">
               Card Number
+              <span
+                className="ml-2 text-gray-400 text-sm cursor-pointer"
+                onMouseEnter={() => setTooltipVisible(true)}
+                onMouseLeave={() => setTooltipVisible(false)}
+              >
+                [?]
+              </span>
+              {tooltipVisible && (
+                <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded absolute">
+                  Enter 16 digits (Visa or MasterCard only).
+                </span>
+              )}
             </label>
             <input
               type="text"
