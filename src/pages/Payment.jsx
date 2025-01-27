@@ -23,6 +23,25 @@ const Payment = () => {
     cvv: "",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validateCard = () => {
+    const errors = {};
+    if (!newCard.cardHolder.trim()) {
+      errors.cardHolder = "Cardholder name is required.";
+    }
+    if (!/^\d{16}$/.test(newCard.cardNumber)) {
+      errors.cardNumber = "Card number must be 16 digits.";
+    }
+    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(newCard.expirationDate)) {
+      errors.expirationDate = "Expiration date must be in MM/YY format.";
+    }
+    if (!/^\d{3,4}$/.test(newCard.cvv)) {
+      errors.cvv = "CVV must be 3 or 4 digits.";
+    }
+    return errors;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewCard({ ...newCard, [name]: value });
@@ -30,6 +49,13 @@ const Payment = () => {
 
   const handleAddCard = (e) => {
     e.preventDefault();
+    const validationErrors = validateCard();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
+
     const newCardFormatted = {
       id: currentCards.length + 1,
       cardHolder: newCard.cardHolder,
@@ -94,9 +120,16 @@ const Payment = () => {
               name="cardHolder"
               value={newCard.cardHolder}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full px-3 py-2 border ${
+                errors.cardHolder ? "border-red-500" : "border-gray-300"
+              } rounded-md focus:outline-none focus:ring-2 ${
+                errors.cardHolder ? "focus:ring-red-500" : "focus:ring-blue-500"
+              }`}
               placeholder="Enter cardholder name"
             />
+            {errors.cardHolder && (
+              <p className="text-red-500 text-sm mt-1">{errors.cardHolder}</p>
+            )}
           </div>
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">
@@ -107,9 +140,16 @@ const Payment = () => {
               name="cardNumber"
               value={newCard.cardNumber}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter card number"
+              className={`w-full px-3 py-2 border ${
+                errors.cardNumber ? "border-red-500" : "border-gray-300"
+              } rounded-md focus:outline-none focus:ring-2 ${
+                errors.cardNumber ? "focus:ring-red-500" : "focus:ring-blue-500"
+              }`}
+              placeholder="Enter 16-digit card number"
             />
+            {errors.cardNumber && (
+              <p className="text-red-500 text-sm mt-1">{errors.cardNumber}</p>
+            )}
           </div>
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">
@@ -120,9 +160,20 @@ const Payment = () => {
               name="expirationDate"
               value={newCard.expirationDate}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full px-3 py-2 border ${
+                errors.expirationDate ? "border-red-500" : "border-gray-300"
+              } rounded-md focus:outline-none focus:ring-2 ${
+                errors.expirationDate
+                  ? "focus:ring-red-500"
+                  : "focus:ring-blue-500"
+              }`}
               placeholder="MM/YY"
             />
+            {errors.expirationDate && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.expirationDate}
+              </p>
+            )}
           </div>
           <div className="mb-4">
             <label className="block text-gray-600 font-medium mb-2">CVV</label>
@@ -131,9 +182,16 @@ const Payment = () => {
               name="cvv"
               value={newCard.cvv}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter CVV"
+              className={`w-full px-3 py-2 border ${
+                errors.cvv ? "border-red-500" : "border-gray-300"
+              } rounded-md focus:outline-none focus:ring-2 ${
+                errors.cvv ? "focus:ring-red-500" : "focus:ring-blue-500"
+              }`}
+              placeholder="Enter 3-4 digit CVV"
             />
+            {errors.cvv && (
+              <p className="text-red-500 text-sm mt-1">{errors.cvv}</p>
+            )}
           </div>
           <button
             type="submit"
