@@ -159,7 +159,7 @@ const Payment = () => {
               type="submit"
               className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
             >
-              Add New card
+              New card
             </button>
           </form>
         </div>
