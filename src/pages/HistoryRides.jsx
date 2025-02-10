@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const HistoryRides = () => {
-  const rides = [];
+  const [rides, setRides] = useState([]);
+
+  useEffect(() => {
+    // Simulating API fetch
+    setTimeout(() => {
+      setRides([
+        { id: 1, date: "2024-02-01", from: "Location A", to: "Location B" },
+        { id: 2, date: "2024-02-05", from: "Location C", to: "Location D" },
+      ]);
+    }, 1000);
+  }, []);
 
   return (
     <div className="p-4">
@@ -15,7 +25,7 @@ const HistoryRides = () => {
           ))}
         </ul>
       ) : (
-        <p className="text-gray-500">No rides available.</p>
+        <p className="text-gray-500">Loading rides...</p>
       )}
     </div>
   );
